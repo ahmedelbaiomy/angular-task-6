@@ -1,0 +1,20 @@
+<div class="card" style="width: 18rem;">
+  <div class="card-header">
+    <strong>InActive Users</strong>
+  </div>
+  <ul class="list-group list-group-flush">
+      <!-- <ng-container *ngFor="let user of Users;let i = index">
+        <ng-container *ngIf="user.status === 'inActive'">
+          <li class="list-group-item">{{user.name}} | <a (click)="setActive(i)">Set to Active</a></li>
+        </ng-container>
+      </ng-container> -->
+
+      <!-- try angular 17 structural directives -->
+      @for(user of Users;track Users;let i=$index){
+        @if(user.status === 'inActive'){
+          <li class="list-group-item" >{{user.name}} | <a (click)="setActive(i)" style="color: blue;">Set to Active</a></li>
+        }
+      }
+
+  </ul>
+</div>

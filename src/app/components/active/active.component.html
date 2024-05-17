@@ -1,0 +1,13 @@
+<div class="card" style="width: 18rem;">
+  <div class="card-header">
+    <strong>Active Users</strong>
+  </div>
+  <ul class="list-group list-group-flush">
+      <ng-container *ngFor="let user of Users; let i = index">
+        <ng-container *ngIf="user.status === 'active'">
+          <li class="list-group-item">{{ user.name }} | <a (click)="setInActive(i)"  style="color: red;">Set to Inactive</a></li>
+        </ng-container>
+      </ng-container>
+  </ul>
+
+</div>
